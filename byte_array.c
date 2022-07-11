@@ -40,7 +40,11 @@ inline byte_array_t *byte_array_new_from_string(const char *string) {
 byte_array_t *byte_array_new_from_byte_array(byte_array_t *other, int index, int size) {
     byte_array_t *ba = byte_array_new_with_size(size);
     
+<<<<<<< HEAD
     byte_array_push_back_chars(ba, other->data + index, size);
+=======
+    byte_array_push_back_chars(other, other->data + index, size);
+>>>>>>> 69da5c966cdcc5d30c918434e14adcaab7896fbd
     
     return ba;
 }
