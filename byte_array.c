@@ -143,8 +143,6 @@ int byte_array_index_of_char_from_count(byte_array_t *ba, char ch, int from, int
     for (int i = from, found = 0; i < (int)ba->size; ++i) {
         if (ba->data[i] == ch) {
             if (++found == count) return i;
-        } else {
-            found = 0;
         }
     }
 
@@ -158,7 +156,6 @@ int byte_array_index_of_chars_from_count(byte_array_t *ba, const char *chars, si
             i += size;
         } else {
             ++i;
-            found = 0;
         }
     }
 
