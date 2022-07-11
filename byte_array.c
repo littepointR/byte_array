@@ -25,7 +25,7 @@ byte_array_t *byte_array_new_with_size(size_t size) {
     return ba;
 }
 
-inline byte_array_t *byte_array_new_form_chars(const char *chars, size_t size) {
+inline byte_array_t *byte_array_new_from_chars(const char *chars, size_t size) {
     byte_array_t *ba = byte_array_new_with_size(size);
 
     byte_array_push_back_chars(ba, chars, size);
@@ -33,8 +33,16 @@ inline byte_array_t *byte_array_new_form_chars(const char *chars, size_t size) {
     return ba;
 }
 
-inline byte_array_t *byte_array_new_form_string(const char *string) {
-    return byte_array_new_form_chars(string, strlen(string));
+inline byte_array_t *byte_array_new_from_string(const char *string) {
+    return byte_array_new_from_chars(string, strlen(string));
+}
+
+byte_array_t *byte_array_new_from_byte_array(byte_array_t *other, int index, int size) {
+    byte_array_t *ba = byte_array_new_with_size(size);
+    
+    byte_array_push_back_chars(ba, ba->data + index, size);
+    
+    return ba;
 }
 
 inline byte_array_t *byte_array_new() {

@@ -15,8 +15,9 @@ char         *byte_array_end(byte_array_t *ba);
 
 byte_array_t *byte_array_new_with_size(size_t size);
 byte_array_t *byte_array_new();
-byte_array_t *byte_array_new_form_chars(const char *chars, size_t size);
-byte_array_t *byte_array_new_form_string(const char *string);
+byte_array_t *byte_array_new_from_chars(const char *chars, size_t size);
+byte_array_t *byte_array_new_from_string(const char *string);
+byte_array_t *byte_array_new_from_byte_array(byte_array_t *other, int index, int size);
 void          byte_array_delete(byte_array_t *ba);
 int           byte_array_is_empty(byte_array_t *ba);
 void          byte_array_clear(byte_array_t *ba);
